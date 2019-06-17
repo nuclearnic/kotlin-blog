@@ -1,8 +1,6 @@
 ## README
 
-Tutorial:
-
-https://spring.io/guides/tutorials/spring-boot-kotlin/
+The 'ol classic article/author REST exercise.
 
 ### Notes
 
