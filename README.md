@@ -7,6 +7,7 @@ The 'ol classic article/author REST exercise.
 * Switched from JUnit 4 to JUnit 5
 * Set `junit.jupiter.testinstance.lifecycle.default = per_class` in `src/test/resources/junit-platform.properties` to allow lifecycle hooks per test class.
 * Persistence with JPA: Using `allopen` for persistence with JPA to make lazy fetching work as expected.
+* Using [Mockk](https://mockk.io/) for integration tests.
 
 ### Notes
 
