@@ -2,8 +2,15 @@
 
 <h1>{{title}}</h1>
 
-<div class="articles">
+<div class="users">
 
-users will all go here
+    {{#users}}
+        <section>
+            <div class="user-login">
+                <strong>{{login}}</strong>
+            </div>
+        </section>
+    {{/users}}
+</div>
 
 </div>
