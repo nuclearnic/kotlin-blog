@@ -1,6 +1,7 @@
 package nuclearnic.blog
 
 import java.time.LocalDateTime
+import java.util.*
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
@@ -15,6 +16,31 @@ class Article(
     var slug: String = title.toSlug(),
     var addedAt: LocalDateTime = LocalDateTime.now(),
     @Id @GeneratedValue var id: Long? = null)
+
+@Entity
+class Book(
+        var title: String,
+        var introduction: String,
+        var content: String,
+        var releaseDate: Date,
+        var edition: Int,
+        @ManyToOne var author: User,
+        @Id @GeneratedValue var id: Long? = null)
+
+@Entity
+class Post(
+        var content: String,
+//        var inReplyTo: Post?,
+        @ManyToOne var thread: Thread,
+        @ManyToOne var author: User,
+        @Id @GeneratedValue var id: Long? =null)
+
+@Entity
+class Thread(
+        var title: String,
+        var openingPost: String,
+        @ManyToOne var creator: User,
+        @Id @GeneratedValue var id: Long? = null)
 
 @Entity
 class User(
