@@ -1,6 +1,9 @@
-package nuclearnic.blog
+package nuclearnic.blog.controllers
 
-import org.springframework.beans.factory.annotation.Value
+import nuclearnic.blog.Article
+import nuclearnic.blog.ArticleRepository
+import nuclearnic.blog.User
+import nuclearnic.blog.format
 import org.springframework.context.annotation.Configuration
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model

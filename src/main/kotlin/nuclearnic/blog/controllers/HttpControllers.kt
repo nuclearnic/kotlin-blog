@@ -1,5 +1,7 @@
-package nuclearnic.blog
+package nuclearnic.blog.controllers
 
+import nuclearnic.blog.ArticleRepository
+import nuclearnic.blog.UserRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
