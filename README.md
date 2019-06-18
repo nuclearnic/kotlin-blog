@@ -9,9 +9,9 @@ The 'ol classic article/author REST exercise.
 * Persistence with JPA: Using `allopen` for persistence with JPA to make lazy fetching work as expected.
 * Using [Mockk](https://mockk.io/) for integration tests.
 
-### Notes
-
 ---
+
+### Notes on Kotlin
 
 #### Entities should have generated IDs 
 
@@ -20,3 +20,14 @@ While Spring Data JPA makes it possible to use natural IDs (it could have been t
 #### Extensions vs Util Classes
 
 Instead of using util classes with abstract methods like in Java, it is usual in Kotlin to provide such functionalities via Kotlin extensions. Here a format() function is added to the existing LocalDateTime type in order to generate text with the english date format.
+
+ ---
+ 
+### Things to learn
+
+#### Generics
+
+* Create a generic class/fun to "word count" for the body of an article or the
+xxx of a yyy.
+
+* Covariant and Contravariant: https://kotlinlang.org/docs/reference/generics.html
