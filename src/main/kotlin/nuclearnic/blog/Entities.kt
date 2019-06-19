@@ -15,17 +15,23 @@ class Article(
     @ManyToOne var author: User,
     var slug: String = title.toSlug(),
     var addedAt: LocalDateTime = LocalDateTime.now(),
-    @Id @GeneratedValue var id: Long? = null)
+    @Id @GeneratedValue var id: Long? = null) : WordCount {
+
+    override var wordCount: Int = content.length
+}
 
 @Entity
-class Book(
+class Book (
         var title: String,
         var introduction: String,
         var content: String,
         var releaseDate: Date,
         var edition: Int,
         @ManyToOne var author: User,
-        @Id @GeneratedValue var id: Long? = null)
+        @Id @GeneratedValue var id: Long? = null) : WordCount {
+
+        override val wordCount: Int = content.length
+}
 
 @Entity
 class Post(
@@ -33,14 +39,20 @@ class Post(
 //        var inReplyTo: Post?,
         @ManyToOne var thread: Thread,
         @ManyToOne var author: User,
-        @Id @GeneratedValue var id: Long? =null)
+        @Id @GeneratedValue var id: Long? =null) : WordCount {
+
+        override val wordCount: Int = content.length
+}
 
 @Entity
 class Thread(
         var title: String,
         var openingPost: String,
         @ManyToOne var creator: User,
-        @Id @GeneratedValue var id: Long? = null)
+        @Id @GeneratedValue var id: Long? = null) : WordCount {
+
+        override val wordCount: Int = 5
+}
 
 @Entity
 class User(

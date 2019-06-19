@@ -1,9 +1,6 @@
 package nuclearnic.blog.controllers
 
-import nuclearnic.blog.Article
-import nuclearnic.blog.ArticleRepository
-import nuclearnic.blog.User
-import nuclearnic.blog.format
+import nuclearnic.blog.*
 import org.springframework.context.annotation.Configuration
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -45,6 +42,7 @@ class HtmlController(private val repository: ArticleRepository) {
             headline,
             content,
             author,
+            wordCount,
             addedAt.format()
     )
 
@@ -54,6 +52,7 @@ class HtmlController(private val repository: ArticleRepository) {
             val headline: String,
             val content: String,
             val author: User,
+            val wordCount: Int,
             val addedAt: String)
 
 }
